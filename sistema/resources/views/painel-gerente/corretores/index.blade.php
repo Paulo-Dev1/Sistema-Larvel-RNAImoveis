@@ -14,7 +14,7 @@ if(!isset($id)){
 ?>
 
 
-<a href="" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Corretor</a>
+<a href="{{route('corretores.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Corretor</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -34,14 +34,17 @@ if(!isset($id)){
 
       <tbody>
       @foreach($itens as $item)
+      <?php 
+       $data = implode('/', array_reverse(explode('-', $item->data_nasc)));
+       ?>
          <tr>
             <td>{{$item->nome}}</td>
-            <td>{{$item->data_nasc}}</td>
+            <td>{{$data}}</td>
             <td>{{$item->email}}</td>
             <td>{{$item->vendas}}</td>
             <td>
-            <a href=""><i class="fas fa-edit text-info mr-1"></i></a>
-            <a href=""><i class="fas fa-trash text-danger mr-1"></i></a>
+            <a href="{{route('corretores.edit', $item)}}"><i class="fas fa-edit text-info mr-1"></i></a>
+            <a href="{{route('corretores.modal', $item)}}"><i class="fas fa-trash text-danger mr-1"></i></a>
             </td>
         </tr>
         @endforeach 

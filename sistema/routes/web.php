@@ -16,10 +16,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//login
 Route::get('/', HomeController::class)->name('home');
 Route::post('painel', [UsuarioController::class, 'login'])->name('usuarios.login');
+//corretores 
 Route::get('corretores', [CadCorretoresController::class, 'index'])->name('corretores.index');
+Route::post('corretores', [CadCorretoresController::class, 'insert'])->name('corretores.insert');
+Route::get('corretores/inserir', [CadCorretoresController::class, 'create'])->name('corretores.inserir');
+
+Route::get('corretores/{item}/edit', [CadCorretoresController::class, 'edit'])->name('corretores.edit');
+Route::put('corretores/{item}', [CadCorretoresController::class, 'editar'])->name('corretores.editar');
+
+Route::delete('corretores/{item}', [CadCorretoresController::class, 'delete'])->name('corretores.delete');
+Route::get('corretores/{item}/delete', [CadCorretoresController::class, 'modal'])->name('corretores.modal');
+//gerentes
 Route::get('home-gerente', [GerenteController::class, 'index'])->name('gerente.index');
 Route::get('/', [UsuarioController::class, 'logout'])->name('usuarios.logout');
 Route::put('gerente/{usuario}', [GerenteController::class, 'editar'])->name('gerente.editar');

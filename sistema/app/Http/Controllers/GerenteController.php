@@ -17,7 +17,7 @@ class GerenteController extends Controller
         $usuario->usuario = $request->usuario;
         $usuario->senha = $request->senha;
         $usuario->save();
-        //return redirect()->route('gerente.index');
+        return redirect()->route('gerente.index');
 
     }
 }

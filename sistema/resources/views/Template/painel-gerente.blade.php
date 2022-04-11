@@ -5,7 +5,7 @@ use App\Models\usuario;
     @session_start();
     $id_usuario = @$_SESSION['id_usuario'];
     $usuario = usuario::find($id_usuario);
-    echo $usuario->nome;
+    
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +36,9 @@ use App\Models\usuario;
         <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         
-         <link rel="shortcut icon" href="../../img/favicon0.ico" type="image/x-icon">
-        <link rel="icon" href="../../img/favicon0.ico" type="image/x-icon">
+        <!--Favicon-->
+        <link rel="shortcut icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ URL::asset('img/favicon.ico') }}" type="image/x-icon">
 
     </head>
 

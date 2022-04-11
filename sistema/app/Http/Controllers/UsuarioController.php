@@ -12,7 +12,7 @@ class UsuarioController extends Controller
         $usuario = $request->usuario;
         $senha = $request->senha;
 
-        $usuarios = usuario::where('usuario', '=', $usuario)->where('senha', '=', $senha)->first();
+        $usuarios = usuario::where('usuario', '=', $usuario)->orwhere('cpf', '=', $usuario)->where('senha', '=', $senha)->first();
         
         //verificação se ele é diferente de nulo
         if(@$usuarios->id != null){
