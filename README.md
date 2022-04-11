@@ -9,7 +9,7 @@
 4- E as demais configurações pessoais ![image](https://user-images.githubusercontent.com/94656550/162817183-8b73c38d-4ef9-48ed-b3ac-33b0e86d57a0.png)
 
 
-<h2>configurar o banco de dados<h2> 
+<h2>configurar o banco de dados</h2> 
 
 1- accesar https://localhost/phpmyadmin/
 
