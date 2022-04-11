@@ -53,7 +53,7 @@ class CadCorretoresController extends Controller
         $itens = corretore::where('cpf', '=', $request->cpf)->orwhere('email', '=', $request->email)->count();
         if($itens > 0){
             echo "<script language='javascript'> window.alert('Registro já Cadastrado!') </script>";
-            return view('painel-gerente.corretores.edit');
+            return view('painel-gerente.corretores.edit', ['item' => $item]);
             
         }
     
@@ -64,5 +64,16 @@ class CadCorretoresController extends Controller
         $item->save();
          return redirect()->route('corretores.index');
  
+     }
+
+     public function delete(corretore $item){
+        $item->delete();
+        return redirect()->route('corretores.index');
+     }
+
+     public function modal($id){
+        $item = corretore::orderby('id', 'desc')->paginate();
+        return view('painel-gerente.corretores.index', ['itens' => $item, 'id' => $id]);
+
      }
 }
