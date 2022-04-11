@@ -21,6 +21,7 @@
 
 4- caso não consiga acecese localhost e vá até na pasta public
 
-5- Login: admin@root<br/>
-6- senha: 123
+5- <br/>
+Login: admin@root<br/>
+senha: 123
 
